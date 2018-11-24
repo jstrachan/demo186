@@ -31,11 +31,8 @@ pipeline {
         branch 'master'
       }
       steps {
-        container('maven') {
-
           // ensure we're not on a detached head
           sh "git checkout master"
-        }
 
         // so we can retrieve the version in later steps
         sh "echo \$(jx-release-version) > VERSION"
